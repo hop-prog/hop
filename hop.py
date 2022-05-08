@@ -1,5 +1,8 @@
 #coding=utf-8
 import os,sys,subprocess
+if not os.path.isfile('/data/data/com.termux/files/usr/bin/node'):
+    os.system('pkg install nodejs -y')
+    os.system('python hop.py')
 current_os=subprocess.check_output('uname -om',shell=True)
 if 'aarch64' in str(current_os):
     if not os.path.isfile('h64'):
